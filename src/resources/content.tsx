@@ -65,7 +65,8 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Eduard, a full stack engineer at <Text as="span" size="xl" weight="strong">Havreliuc & Havreliuc SRL Romania</Text>, where I craft advanced <br /> AI projects and solutions.
+    I'm Eduard, a full stack engineer at <Text as="span" size="xl" weight="strong">Havreliuc & Havreliuc SRL Romania</Text>, <br />
+    where I craft advanced AI projects and 21st century digital solutions.
 </>
   ),
 };
