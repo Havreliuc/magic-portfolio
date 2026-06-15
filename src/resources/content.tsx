@@ -1,15 +1,15 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Column, Line, Row, Tag, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Eduard",
+  lastName: "Havreliuc",
+  name: `Eduard Havreliuc`,
+  role: "Full Stack Engineer",
+  avatar: "/images/eduard_avatar.jpg",
+  email: "havreliuc@gmail.com",
+  location: "Europe/Bucharest", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Romanian"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
@@ -23,29 +23,11 @@ const social: Social = [
   // Import new icons in /once-ui/icons.ts
   // Set essentials: true for links you want to show on the about page
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
-  {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/eduard-havreliuc-08040661/",
     essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
-  },
+  },  
   {
     name: "Email",
     icon: "email",
@@ -76,10 +58,111 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    I'm Eduard, a full stack engineer at <Text as="span" size="xl" weight="strong">Havreliuc & Havreliuc SRL Romania</Text>, where I craft advanced <br /> AI projects and solutions.
 </>
   ),
 };
+
+// Technology stack for the Calosense.com experience, grouped by area
+const calosenseStack: { category: string; items: string[] }[] = [
+  {
+    category: "Frontend",
+    items: [
+      "Angular",
+      "PrimeNG",
+      "TanStack Angular Query",
+      "ngx-translate (i18n)"
+    ],
+  },
+  {
+    category: "Backend",
+    items: [
+      "NestJS",
+      "Node",
+      "TypeScript",
+      "Prisma",
+      "BullMQ (Redis queues)",
+      "Firebase Admin",
+      "Swagger/OpenAPI",
+      "Google Cloud Functions",
+    ],
+  },
+  {
+    category: "Data",
+    items: ["PostgreSQL", "Cloud Firestore", "Redis"],
+  },
+  {
+    category: "AI / Google Cloud",
+    items: [
+      "Vertex AI (Gemini Flash)",
+      "Genkit",
+      "Cloud Storage",
+      "Storage for Firebase",
+      "FCM",
+      "reCAPTCHA Enterprise",
+    ],
+  },
+  {
+    category: "Integrations",
+    items: [
+      "Twilio (SMS/voice/video)",
+      "Vapi (voice AI)",
+      "SignWell (e-sign)",
+      "Calendly",
+      "Garmin",
+      "Withings",
+      "FHIR",
+      "Cloudflare",
+      "AWS S3",
+      "Athena/Glue",
+    ],
+  },
+  {
+    category: "Infra",
+    items: ["Docker", "Google Cloud Build", "Kubernetes (GKE)", "Firebase Hosting"],
+  },
+];
+
+// AI features built into the Calosense.com platform
+const calosenseAiUsage: { area: string; description: string; provider?: string }[] = [
+  {
+    area: "Vertex AI (Gemini)",
+    description: "Core LLM generation across the platform.",
+    provider: "gemini-3-flash-preview via Genkit vertexAI()",
+  },
+  {
+    area: "Vapi voice AI",
+    description: "AI phone calls and webhooks.",
+    provider: "Vapi (VAPI_API_KEY)",
+  },
+  {
+    area: "SMS scheduling intent",
+    description: 'Parses patient replies ("accept / different day / reject").',
+    provider: "Gemini, gated by GENKIT_API_KEY",
+  },
+  {
+    area: "Campaign bot / WhatsApp auto-reply",
+    description: "AI-driven conversational replies and message templates.",
+  },
+  {
+    area: "AI predefined answers",
+    description: "Catalog of AI-generated reply suggestions.",
+  },
+  {
+    area: "Prompt-AI",
+    description: "Generic LLM prompt execution service.",
+  },
+  {
+    area: "PDF / lab-test analysis",
+    description: "OCR and data extraction from uploaded PDFs and images (base64 → Gemini).",
+    provider: "Vertex AI",
+  },
+  {
+    area: "PDF / Monthly reports",
+    description: "PDF / Monthly reports generation across the platform.",
+    provider: "pdf-lib, jsPDF, docxtemplater, Puppeteer",
+  },
+];
 
 const about: About = {
   path: "/about",
@@ -102,56 +185,81 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Eduard is a Bucharest-based full stack engineer with a passion for transforming complex challenges
+        intoelegant AI solutions. His work spans digital interfaces, interactive
+        experiences, and the convergence of AI and technology.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Startup Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Calosense.com",
+        link: "https://calosense.com/about",
+        timeframe: "2021 - Present",
+        role: "Full Stack Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
+            Redesigned the UI/UX and upgraded the backend platform to the latest technologies, resulting in a 20% increase in user
             engagement and 30% faster load times.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Spearheaded the integration of AI tools into backend, frontend and mobile workflows, enabling 
+            developers to iterate and build products faster, caregivers to take care of their patients faster
+            and improve the mobile experience for patients.
           </>,
+          <Column gap="16" fillWidth>
+            <Text variant="label-strong-s" onBackground="neutral-strong">
+              Tech stack
+            </Text>
+            {calosenseStack.map((group) => (
+              <Column key={group.category} gap="8">
+                <Text variant="label-default-s" onBackground="neutral-weak">
+                  {group.category}
+                </Text>
+                <Row wrap gap="8">
+                  {group.items.map((item) => (
+                    <Tag key={item} size="s">
+                      {item}
+                    </Tag>
+                  ))}
+                </Row>
+              </Column>
+            ))}
+          </Column>,
+          <Column gap="16" fillWidth>
+            <Text variant="label-strong-s" onBackground="neutral-strong">
+              AI usage
+            </Text>
+            {calosenseAiUsage.map((item) => (
+              <Column key={item.area} gap="4">
+                <Text variant="label-default-s" onBackground="neutral-strong">
+                  {item.area}
+                </Text>
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  {item.description}
+                </Text>
+                {item.provider && (
+                  <Text variant="label-default-xs" onBackground="brand-weak">
+                    {item.provider}
+                  </Text>
+                )}
+              </Column>
+            ))}
+          </Column>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            src: "/images/projects/project-01/calosense-01.png",
+            alt: "Calosense",
             width: 16,
             height: 9,
           },
         ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
-      },
+      }
     ],
   },
   studies: {
@@ -159,12 +267,8 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "University Politehnica of Bucharest",
+        description: <>Studied software engineering and computer science.</>,
       },
     ],
   },
@@ -173,14 +277,46 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "AI Integration",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Able to integrate AI tools into backend, frontend and mobile workflows.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
+            name: "MCP",
+            icon: "mcp",
+          },
+          {
+            name: "Vertex AI",
+            icon: "vertexai",
+          },
+          {
+            name: "Genkit",
+            icon: "genkit",
+          },
+          {
+            name: "OpenRouter",
+            icon: "openrouter",
+          },
+        ],
+      },
+      {
+        title: "Frontend",
+        description: (
+          <>Able to prototype in NestJS with unnatural speed.</>
+        ),
+        tags: [
+          {
+            name: "Angular",
+            icon: "angular",
+          },
+          {
+            name: "React",
+            icon: "react",
+          },
+          {
+            name: "React Native",
+            icon: "react-native",
           },
         ],
         // optional: leave the array empty if you don't want to display images
@@ -190,24 +326,22 @@ const about: About = {
             alt: "Project image",
             width: 16,
             height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+          }
         ],
       },
       {
         title: "Next.js",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Building next gen apps with Angular + PrimeNG + PostgreSQL.</>
         ),
         tags: [
           {
             name: "JavaScript",
             icon: "javascript",
+          },
+          {
+            name: "TypeScript",
+            icon: "typescript",
           },
           {
             name: "Next.js",
@@ -225,6 +359,53 @@ const about: About = {
             alt: "Project image",
             width: 16,
             height: 9,
+          },
+        ],
+      },
+      {
+        title: "Mobile",
+        description: (
+          <>Able to prototype in Flutter and React Native .</>
+        ),
+        tags: [
+          {
+            name: "Flutter",
+            icon: "flutter",
+          },
+          {
+            name: "React Native",
+            icon: "react-native",
+          },
+          {
+            name: "Expo",
+            icon: "expo",
+          }
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/calosense-04.png",
+            alt: "Project image",
+            width: 9,
+            height: 18,
+          },
+          {
+            src: "/images/projects/project-01/calosense-06.png",
+            alt: "Project image",
+            width: 9,
+            height: 18,
+          },
+          {
+            src: "/images/projects/project-01/calosense-05.png",
+            alt: "Project image",
+            width: 9,
+            height: 18,
+          },
+          {
+            src: "/images/projects/project-01/calosense-07.png",
+            alt: "Project image",
+            width: 9,
+            height: 18,
           },
         ],
       },
@@ -262,42 +443,7 @@ const gallery: Gallery = {
       src: "/images/gallery/horizontal-1.jpg",
       alt: "image",
       orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
+    }
   ],
 };
 
