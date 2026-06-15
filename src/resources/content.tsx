@@ -5,6 +5,7 @@ const person: Person = {
   firstName: "Eduard",
   lastName: "Havreliuc",
   name: `Eduard Havreliuc`,
+  mobile: "+40729722620",
   role: "Full Stack Engineer",
   avatar: "/images/eduard_avatar.jpg",
   email: "havreliuc@gmail.com",
@@ -34,6 +35,12 @@ const social: Social = [
     link: `mailto:${person.email}`,
     essential: true,
   },
+  {
+    name: "Mobile",
+    icon: "mobile",
+    link: `tel:${person.mobile}`,
+    essential: true,
+  }
 ];
 
 const home: Home = {
