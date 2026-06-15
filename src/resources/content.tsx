@@ -14,7 +14,7 @@ const person: Person = {
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -54,7 +54,7 @@ const home: Home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Personal Portfolio</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -66,7 +66,8 @@ const home: Home = {
   subline: (
     <>
     I'm Eduard, a full stack engineer at <Text as="span" size="xl" weight="strong">Havreliuc & Havreliuc SRL Romania</Text>, <br />
-    where I craft advanced AI projects and 21st century digital solutions.
+    where I craft advanced AI projects <br />
+    and 21st century digital solutions.
 </>
   ),
 };

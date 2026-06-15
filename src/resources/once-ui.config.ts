@@ -20,8 +20,8 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/blog": false,
+  "/gallery": false,
 };
 
 const display: DisplayConfig = {
@@ -188,23 +188,23 @@ const mailchimp: MailchimpConfig = {
 const schema: SchemaConfig = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
+  name: "Calosense",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "ihavreliuc@gmail.com",
 };
 
 // social links
 const sameAs: SameAsConfig = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  linkedin: "https://www.linkedin.com/in/eduard-havreliuc-08040661/",
+  email: "ihavreliuc@gmail.com",
+  mobile: "+40729722620",
 };
 
 // social sharing configuration for blog posts
 const socialSharing: SocialSharingConfig = {
   display: true,
   platforms: {
-    x: true,
+    x: false,
     linkedin: true,
     facebook: false,
     pinterest: false,

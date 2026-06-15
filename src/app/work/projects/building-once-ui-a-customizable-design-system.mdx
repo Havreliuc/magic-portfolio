@@ -1,12 +1,15 @@
 ---
-title: "Building Once UI, a Customizable Design System"
-publishedAt: "2024-04-08"
-summary: "Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration."
+title: "Building AI Solutions with Angular and PrimeNG"
+publishedAt: "2026-06-15"
+summary: "Development of multiple AI solutions with Angular and PrimeNG in AWS and Google Cloud."
 images:
-  - "/images/projects/project-01/cover-01.jpg"
-  - "/images/projects/project-01/cover-02.jpg"
-  - "/images/projects/project-01/cover-03.jpg"
-  - "/images/projects/project-01/cover-04.jpg"
+  - "/images/projects/project-01/calosense-01.png"
+  - "/images/projects/project-01/calosense-02.png"  
+  - "/images/projects/project-01/calosense-03.png"
+  - "/images/projects/project-01/calosense-04.png"
+  - "/images/projects/project-01/calosense-05.png"
+  - "/images/projects/project-01/calosense-06.png"
+  - "/images/projects/project-01/calosense-07.png"
 team:
   - name: "Eduard Havreliuc"
     role: "Full Stack Engineer"
@@ -16,26 +19,29 @@ team:
 
 ## Overview
 
-Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration.
+Development of an AI-powered healthcare and patient-care management platform with Angular and PrimeNG, running on AWS and Google Cloud.
 
 ## Key Features
 
-- **Component Library**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.
-- **Theming and Customization**: Integrated a theming system that allows easy switching and customization of color palettes, typography, and layout styles using CSS variables and Figma tokens.
-- **Figma Integration**: Collaborated closely with designers by setting up a shared design library in Figma. This library was synchronized with the codebase, ensuring design handoffs were seamless and that design tokens remained consistent across both platforms.
-- **Documentation and Usage Guidelines**: Developed comprehensive documentation with Storybook to showcase components, usage patterns, and best practices, ensuring the design system is easy to adopt by other teams.
+- **Patient Care Management**: Built a comprehensive platform for patient profiles, schedules, medications, questionnaires, triggers, tasks, and clinical notes, with role-based access for patients, caregivers, and admins.
+- **AI Assistance**: Integrated Google Gemini (via Vertex AI and Genkit) for lab-test/PDF analysis and OCR, AI-driven SMS and WhatsApp replies, scheduling-intent parsing, and AI voice calls through Vapi.
+- **Real-time Communication**: Implemented live chat, support rooms, and patient SMS/WhatsApp messaging using Socket.IO and Twilio, including campaign orchestration and message tracking.
+- **Async Processing & Triggers**: Designed an event-driven trigger system with BullMQ job queues to automatically generate tasks and notifications based on patient data and events.
+- **Documents & E-signature**: Added PDF generation and editing (pdf-lib, jsPDF, Puppeteer), checklist documents, and SignWell e-signature workflows.
 
 ## Technologies Used
 
-- **Next.js**: For fast, server-rendered React applications.
-- **Figma**: For creating and managing design assets and prototypes.
-- **Styled-Components**: For styling React components with a modular, themable approach.
-- **Storybook**: For building an interactive, documented component library.
+- **Angular 19 + PrimeNG**: For a modular, reactive, component-rich frontend.
+- **NestJS + Prisma**: For a modular TypeScript backend with a type-safe PostgreSQL data layer.
+- **Vertex AI (Gemini) + Genkit**: For generative AI, document analysis, and conversational automation.
+- **BullMQ + Redis**: For async job queues and scheduled background processing.
+- **Twilio & Vapi**: For SMS, voice, video, and AI phone calls.
+- **AWS & Google Cloud**: S3, Athena, and Glue alongside Firebase (Auth, Storage, Firestore, FCM), deployed via Docker, Cloud Build, and Kubernetes (GKE).
 
 ## Challenges and Learnings
 
-One key challenge was balancing the need for flexibility with the desire to maintain design consistency. The solution involved creating well-defined design tokens and establishing clear guidelines for when and how components could be customized. Additionally, setting up effective collaboration workflows between designers and developers using Figma and Git was a learning experience that greatly improved the process.
+A key challenge was orchestrating many third-party integrations (Twilio, Vapi, SignWell, Garmin, Withings, FHIR) and AI services reliably within a healthcare context where data accuracy and uptime matter. The solution involved a modular service architecture, resilient retry logic for transient network failures, queue-based async processing, and centralized authentication and caching. Coordinating credentials across AWS, Google Cloud, and Firebase — and keeping them secure and consistent across environments — was a valuable operational learning experience.
 
 ## Outcome
 
-The design system is now actively used across multiple projects, leading to faster development cycles, fewer design inconsistencies, and improved collaboration between design and development teams. It has become a foundation for scaling our products efficiently while ensuring a cohesive user experience.
+The platform supports day-to-day patient care for multiple organisations, combining clinical workflows, real-time messaging, and AI automation in a single system. Its modular architecture has made it straightforward to add new features and integrations, while AI assistance has reduced manual work for caregivers and improved responsiveness to patients.
